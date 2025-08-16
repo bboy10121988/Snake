@@ -84,19 +84,18 @@ npm run db:push
 
 ## 🚀 部署選項
 
-### 1. Vercel 部署
-```bash
-npm i -g vercel
-vercel
-```
+### 1. Railway 部署（推薦）
+1. 訪問 [railway.app](https://railway.app)
+2. 連接 GitHub 倉庫
+3. 選擇 `bboy10121988/Snake` 倉庫
+4. 自動部署
 
-### 2. Railway 部署
-- 連接 GitHub 倉庫
-- 自動部署
-
-### 3. Render 部署
+### 2. Render 部署
 - 連接 GitHub 倉庫
 - 使用 `npm run build && npm start`
+
+### 3. Heroku 部署
+- 支援 Node.js 應用部署
 
 ### 4. Docker 部署
 ```dockerfile

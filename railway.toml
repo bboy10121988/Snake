@@ -1,0 +1,23 @@
+build:
+  commands:
+    - npm install
+    - npm run build
+  watchPatterns:
+    - "**/*.ts"
+    - "**/*.tsx"
+    - "**/*.js"
+    - "**/*.jsx"
+
+deploy:
+  restartPolicyType: always
+  numReplicas: 1
+  
+services:
+  web:
+    buildCommand: npm run build
+    startCommand: npm start
+    healthcheckPath: /
+    healthcheckTimeout: 300
+    
+env:
+  NODE_ENV: production
