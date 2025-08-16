@@ -1,0 +1,156 @@
+SnakeGame 專案結構報告
+========================
+
+## 專案概述
+這是一個3D貪食蛇網頁遊戲專案，採用全端架構設計。
+前端使用 React + Three.js 提供3D遊戲體驗，後端使用 Node.js + Express 提供API服務。
+
+## 技術棧
+- 前端：React 18 + TypeScript + Vite + Three.js + Tailwind CSS
+- 後端：Node.js + Express + TypeScript
+- 資料庫：Drizzle ORM (支援 PostgreSQL)
+- 建置工具：Vite + ESBuild
+- 開發工具：TSX (TypeScript執行器)
+
+## 專案根目錄檔案
+├── package.json          # 專案依賴和腳本配置
+├── tsconfig.json          # TypeScript 編譯配置
+├── vite.config.ts         # Vite 建置工具配置
+├── tailwind.config.ts     # Tailwind CSS 樣式配置
+├── postcss.config.js      # PostCSS 處理器配置
+├── drizzle.config.ts      # 資料庫 ORM 配置
+└── replit.md              # Replit 平台說明文件
+
+## 主要資料夾結構
+
+### 🖥️ client/ - 前端客戶端
+前端網頁應用程式的所有檔案，包含遊戲界面和3D渲染
+
+├── index.html                    # 主要HTML檔案，應用程式入口點
+├── public/                       # 靜態資源檔案夾
+│   ├── fonts/
+│   │   └── inter.json           # Inter 字型配置檔案
+│   ├── geometries/
+│   │   └── heart.gltf           # 3D 心形模型檔案
+│   ├── sounds/                  # 遊戲音效檔案
+│   │   ├── background.mp3       # 背景音樂
+│   │   ├── hit.mp3              # 撞擊音效
+│   │   └── success.mp3          # 成功音效
+│   └── textures/                # 3D 貼圖材質
+│       ├── asphalt.png          # 柏油路貼圖
+│       ├── grass.png            # 草地貼圖
+│       ├── sand.jpg             # 沙地貼圖
+│       ├── sky.png              # 天空貼圖
+│       └── wood.jpg             # 木質貼圖
+├── src/                         # 前端原始碼
+│   ├── main.tsx                 # React 應用程式入口點
+│   ├── App.tsx                  # 主要應用程式組件
+│   ├── index.css                # 全域CSS樣式
+│   ├── components/              # React 組件
+│   │   ├── GameUI.tsx           # 遊戲使用者界面組件
+│   │   ├── SnakeGame.tsx        # 主要遊戲邏輯組件
+│   │   └── ui/                  # 可重用的UI組件庫
+│   │       ├── button.tsx       # 按鈕組件
+│   │       ├── card.tsx         # 卡片組件
+│   │       ├── dialog.tsx       # 對話框組件
+│   │       ├── input.tsx        # 輸入框組件
+│   │       └── [其他UI組件...]   # 完整的設計系統組件
+│   ├── hooks/                   # 自定義 React Hooks
+│   │   ├── use-is-mobile.tsx    # 偵測行動裝置的Hook
+│   │   └── useSnakeGame.ts      # 貪食蛇遊戲邏輯Hook
+│   ├── lib/                     # 工具函式庫
+│   │   ├── queryClient.ts       # React Query 客戶端配置
+│   │   ├── utils.ts             # 通用工具函式
+│   │   └── stores/              # 狀態管理
+│   │       ├── useAudio.tsx     # 音效管理狀態
+│   │       └── useGame.tsx      # 遊戲狀態管理
+│   └── pages/                   # 頁面組件
+│       └── not-found.tsx        # 404 錯誤頁面
+
+### 🖥️ server/ - 後端伺服器
+Node.js 後端服務，提供API和靜態檔案服務
+
+├── index.ts               # 伺服器主要入口點，設定Express應用程式
+├── routes.ts              # API 路由定義和處理邏輯
+├── storage.ts             # 資料儲存相關功能
+└── vite.ts                # Vite 開發伺服器整合
+
+### 🔗 shared/ - 共用程式碼
+前後端共用的程式碼，確保資料結構一致性
+
+└── schema.ts              # Zod 驗證架構，定義前後端共用的資料型別
+
+## 主要功能模組
+
+### 🎮 遊戲核心功能
+- SnakeGame.tsx: 3D 貪食蛇遊戲的主要邏輯
+- useSnakeGame.ts: 遊戲狀態管理和邏輯處理
+- Three.js 整合: 提供 3D 渲染和視覺效果
+
+### 🔊 音效系統
+- useAudio.tsx: 音效播放和控制
+- 支援背景音樂、音效和音量控制
+
+### 🎨 使用者界面
+- 完整的 UI 組件庫 (基於 Radix UI + Tailwind CSS)
+- 響應式設計，支援桌面和行動裝置
+- 現代化的遊戲界面設計
+
+### 💾 資料持久化
+- Drizzle ORM 用於資料庫操作
+- 支援遊戲分數和玩家資料儲存
+
+## 開發和建置腳本
+
+### 開發環境
+npm run dev       # 啟動開發伺服器 (http://localhost:5001)
+npm run check     # TypeScript 型別檢查
+
+### 生產環境
+npm run build     # 建置前後端應用程式
+npm start         # 啟動生產環境伺服器
+
+### 資料庫
+npm run db:push   # 推送資料庫架構變更
+
+## 教學重點
+
+### 1. 全端開發架構
+- 展示如何結合 React 前端和 Node.js 後端
+- 理解前後端分離的開發模式
+
+### 2. 3D 網頁遊戲開發
+- Three.js 在 React 中的應用
+- 3D 場景建立和物件操作
+
+### 3. 現代化開發工具
+- TypeScript 的型別安全
+- Vite 的快速建置
+- Tailwind CSS 的工具式設計
+
+### 4. 狀態管理
+- React Hooks 的進階應用
+- Zustand 狀態管理庫使用
+
+### 5. 音效和多媒體
+- 網頁音效播放和控制
+- 3D 模型和貼圖載入
+
+## 專案特色
+✅ 現代化技術棧
+✅ 完整的 TypeScript 支援
+✅ 響應式設計
+✅ 3D 遊戲體驗
+✅ 音效系統
+✅ 可擴展的架構
+✅ 開發友善的工具鏈
+
+## 學習建議
+1. 從 package.json 了解專案依賴
+2. 閱讀 main.tsx 和 App.tsx 理解應用程式結構
+3. 研究 SnakeGame.tsx 學習遊戲邏輯
+4. 探索 components/ui/ 學習組件設計模式
+5. 分析 server/ 資料夾了解後端架構
+
+這個專案非常適合用於教學全端網頁開發、3D 網頁遊戲製作、
+以及現代化前端開發技術。
