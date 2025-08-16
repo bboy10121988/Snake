@@ -32,7 +32,7 @@ export const useSnakeGame = () => {
   const [speed, setSpeed] = useState(INITIAL_SPEED);
   
   const gameLoopRef = useRef<number | null>(null);
-  const timerRef = useRef<number | null>(null);
+  const timerRef = useRef<NodeJS.Timeout | null>(null);
   const lastMoveTimeRef = useRef<number>(0);
   const nextDirectionRef = useRef<Direction>('RIGHT');
 
