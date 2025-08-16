@@ -2,6 +2,14 @@
 
 一個使用 React + Three.js 建立的現代化 3D 貪食蛇遊戲
 
+## 🚀 一鍵部署
+
+[![Deploy with Vercel](https://vercel.com/button)](https://vercel.com/new/clone?repository-url=https%3A%2F%2Fgithub.com%2Fbboy10121988%2FSnake)
+
+[![Deploy on Railway](https://railway.app/button.svg)](https://railway.app/template/RjhC1P?referralCode=alphasec)
+
+[![Deploy to Render](https://render.com/images/deploy-to-render-button.svg)](https://render.com/deploy?repo=https://github.com/bboy10121988/Snake)
+
 ## ✨ 特色功能
 
 - 🎮 3D 遊戲體驗
