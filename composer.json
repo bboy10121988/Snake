@@ -1,0 +1,18 @@
+{
+    "name": "51pro/wordpress",
+    "description": "51Pro WordPress Project",
+    "type": "project",
+    "license": "GPL-2.0-or-later",
+    "require": {
+        "php": ">=8.0",
+        "johnpbloch/wordpress": "^6.9"
+    },
+    "extra": {
+        "wordpress-install-dir": "wp"
+    },
+    "config": {
+        "allow-plugins": {
+            "johnpbloch/wordpress-core-installer": true
+        }
+    }
+}

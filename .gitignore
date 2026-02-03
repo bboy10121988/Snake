@@ -1,9 +1,16 @@
 # Dependencies
+/vendor/
 node_modules/
 
-# Build output
-dist/
-build/
+# WordPress
+wp/wp-config.php
+wp/wp-content/uploads/
+wp/wp-content/upgrade/
+wp/wp-content/cache/
+wp/wp-content/plugins/*
+!wp/wp-content/plugins/.gitkeep
+wp/wp-content/themes/*
+!wp/wp-content/themes/.gitkeep
 
 # Environment files
 .env
@@ -20,4 +27,8 @@ Thumbs.db
 
 # Logs
 *.log
+debug.log
 npm-debug.log*
+
+# Composer
+composer.phar
